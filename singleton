@@ -1,0 +1,26 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<iostream>
+class Singleton{
+public:
+	static Singleton& get_instance()
+	{
+		if (!mpobject) {
+			mpoject = new Singleton;
+		}
+		return *mpobject;
+	}
+	void f1();
+	void f2();
+	void f3();
+
+private:
+	Singleton();
+	inline static Singleton* mpobject = nullptr;
+
+};
+int main()
+{
+	auto& rs = Singleton::get_instance();
+	rs.f1();
+
+}
